@@ -1,0 +1,627 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>taihao加点 - 泰豪加点方案与游戏攻略指南</title>
+    <meta name="description" content="taihao加点专题站，提供泰豪角色属性加点思路、技能搭配、装备选择与游戏攻略，帮助玩家打造强力角色，畅享游戏乐趣。">
+    <meta name="keywords" content="taihao加点,泰豪加点,角色加点,属性分配,技能搭配,游戏攻略">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background: #f5f7fa;
+            color: #2d3748;
+            line-height: 1.6;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        /* Header */
+        .site-header {
+            background: linear-gradient(135deg, #1a202c 0%, #2d3748 100%);
+            color: #fff;
+            padding: 20px 0;
+            border-bottom: 4px solid #ed8936;
+        }
+        .header-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+        .logo-area h1 {
+            font-size: 2rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+            color: #fbd38d;
+        }
+        .logo-area p {
+            font-size: 0.95rem;
+            color: #cbd5e0;
+            margin-top: 4px;
+        }
+        .nav-menu {
+            display: flex;
+            gap: 24px;
+            flex-wrap: wrap;
+        }
+        .nav-menu a {
+            color: #e2e8f0;
+            text-decoration: none;
+            font-weight: 500;
+            padding: 6px 0;
+            border-bottom: 2px solid transparent;
+            transition: 0.2s;
+        }
+        .nav-menu a:hover {
+            color: #fbd38d;
+            border-bottom-color: #ed8936;
+        }
+        /* Hero */
+        .hero {
+            background: linear-gradient(145deg, #2c3e50 0%, #4a5568 100%);
+            color: #fff;
+            padding: 60px 0;
+            margin-bottom: 40px;
+        }
+        .hero-content {
+            max-width: 800px;
+        }
+        .hero h2 {
+            font-size: 2.4rem;
+            font-weight: 700;
+            margin-bottom: 16px;
+            color: #fbd38d;
+        }
+        .hero p {
+            font-size: 1.2rem;
+            color: #e2e8f0;
+            margin-bottom: 24px;
+        }
+        .hero-badge {
+            display: inline-block;
+            background: #ed8936;
+            color: #fff;
+            padding: 6px 18px;
+            border-radius: 30px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+        }
+        /* Section */
+        .section {
+            margin-bottom: 50px;
+        }
+        .section-title {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #1a202c;
+            margin-bottom: 12px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        .section-title:after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 60px;
+            height: 3px;
+            background: #ed8936;
+            border-radius: 2px;
+        }
+        .section-sub {
+            color: #718096;
+            margin-bottom: 24px;
+            font-size: 1rem;
+        }
+        /* Cards */
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 24px;
+        }
+        .card {
+            background: #fff;
+            border-radius: 12px;
+            padding: 24px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.06);
+            transition: transform 0.2s, box-shadow 0.2s;
+            border-top: 4px solid #ed8936;
+        }
+        .card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+        }
+        .card h3 {
+            font-size: 1.25rem;
+            color: #2d3748;
+            margin-bottom: 10px;
+        }
+        .card p {
+            color: #4a5568;
+            font-size: 0.95rem;
+            margin-bottom: 12px;
+        }
+        .tag {
+            display: inline-block;
+            background: #edf2f7;
+            color: #4a5568;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 500;
+            margin-right: 6px;
+            margin-bottom: 6px;
+        }
+        .btn {
+            display: inline-block;
+            background: #ed8936;
+            color: #fff;
+            padding: 8px 20px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: background 0.2s;
+            border: none;
+            cursor: pointer;
+        }
+        .btn:hover {
+            background: #dd6b20;
+        }
+        .btn-outline {
+            background: transparent;
+            border: 2px solid #ed8936;
+            color: #ed8936;
+        }
+        .btn-outline:hover {
+            background: #ed8936;
+            color: #fff;
+        }
+        /* 攻略列表 */
+        .guide-list {
+            list-style: none;
+        }
+        .guide-list li {
+            background: #fff;
+            border-radius: 8px;
+            padding: 16px 20px;
+            margin-bottom: 12px;
+            box-shadow: 0 1px 4px rgba(0,0,0,0.05);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 10px;
+            border-left: 4px solid #ed8936;
+        }
+        .guide-list li a {
+            color: #2d3748;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1rem;
+        }
+        .guide-list li a:hover {
+            color: #ed8936;
+        }
+        .guide-meta {
+            color: #a0aec0;
+            font-size: 0.85rem;
+        }
+        /* FAQ */
+        .faq-item {
+            background: #fff;
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 16px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+        }
+        .faq-item h4 {
+            font-size: 1.1rem;
+            color: #2d3748;
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+        .faq-item p {
+            color: #718096;
+            font-size: 0.95rem;
+        }
+        /* 提示框 */
+        .tip-box {
+            background: #ebf8ff;
+            border-left: 4px solid #3182ce;
+            padding: 16px 20px;
+            border-radius: 8px;
+            margin: 24px 0;
+        }
+        .tip-box strong {
+            color: #2b6cb0;
+        }
+        /* 表格 */
+        .table-wrapper {
+            overflow-x: auto;
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            padding: 10px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.95rem;
+        }
+        th {
+            background: #edf2f7;
+            color: #2d3748;
+            font-weight: 600;
+            padding: 12px 16px;
+            text-align: left;
+        }
+        td {
+            padding: 12px 16px;
+            border-bottom: 1px solid #e2e8f0;
+        }
+        tr:last-child td {
+            border-bottom: none;
+        }
+        /* 页脚 */
+        .site-footer {
+            background: #1a202c;
+            color: #a0aec0;
+            padding: 40px 0 20px;
+            margin-top: 60px;
+        }
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+        .footer-grid h4 {
+            color: #e2e8f0;
+            font-size: 1.1rem;
+            margin-bottom: 12px;
+        }
+        .footer-grid a {
+            display: block;
+            color: #a0aec0;
+            text-decoration: none;
+            font-size: 0.9rem;
+            margin-bottom: 8px;
+        }
+        .footer-grid a:hover {
+            color: #fbd38d;
+        }
+        .copyright {
+            text-align: center;
+            border-top: 1px solid #2d3748;
+            padding-top: 20px;
+            font-size: 0.85rem;
+        }
+        /* 响应式 */
+        @media (max-width: 768px) {
+            .header-inner {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            .nav-menu {
+                margin-top: 10px;
+                gap: 16px;
+            }
+            .hero h2 {
+                font-size: 1.6rem;
+            }
+            .hero p {
+                font-size: 1rem;
+            }
+            .section-title {
+                font-size: 1.5rem;
+            }
+            .card-grid {
+                grid-template-columns: 1fr;
+            }
+            .guide-list li {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+        }
+        @media (max-width: 480px) {
+            .container {
+                padding: 0 15px;
+            }
+            .logo-area h1 {
+                font-size: 1.5rem;
+            }
+            .hero {
+                padding: 40px 0;
+            }
+            .btn {
+                padding: 8px 16px;
+                font-size: 0.85rem;
+            }
+        }
+    </style>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</head>
+<body>
+    <header class="site-header">
+        <div class="container header-inner">
+            <div class="logo-area">
+                <h1>taihao加点</h1>
+                <p>泰豪游戏加点与角色养成专业指南</p>
+            </div>
+            <nav class="nav-menu">
+                <a href="#builds">加点方案</a>
+                <a href="#skills">技能搭配</a>
+                <a href="#equipment">装备选择</a>
+                <a href="#faq">常见问题</a>
+                <a href="#guide">攻略心得</a>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <span class="hero-badge">🔥 热门加点专题</span>
+                <h2>泰豪角色加点全解析</h2>
+                <p>无论你是初入游戏的新手，还是寻求突破的老玩家，这里为你提供系统化的属性分配思路、技能组合和实战技巧，助你打造属于自己的强势角色。</p>
+                <a href="#builds" class="btn">查看加点方案</a>
+                <a href="#guide" class="btn btn-outline" style="background: transparent;">阅读攻略</a>
+            </div>
+        </div>
+    </section>
+
+    <main class="container">
+        <!-- 加点方案 -->
+        <section id="builds" class="section">
+            <h2 class="section-title">主流加点方案</h2>
+            <p class="section-sub">根据不同的战斗定位与玩法风格，选择适合你的加点思路。以下推荐基于常见游戏机制，实际效果请结合版本环境调整。</p>
+            <div class="card-grid">
+                <div class="card">
+                    <h3>力量型加点</h3>
+                    <p>专注于物理攻击与近战输出，适合喜欢正面硬刚的玩家。属性分配以力量为主，辅以适量体力保证生存。</p>
+                    <div>
+                        <span class="tag">力量优先</span>
+                        <span class="tag">物理输出</span>
+                        <span class="tag">近战</span>
+                    </div>
+                </div>
+                <div class="card">
+                    <h3>敏捷型加点</h3>
+                    <p>追求攻击速度与暴击率，通过高频攻击快速压制对手。适合操作灵活、偏爱爆发伤害的玩家。</p>
+                    <div>
+                        <span class="tag">敏捷核心</span>
+                        <span class="tag">暴击</span>
+                        <span class="tag">攻速</span>
+                    </div>
+                </div>
+                <div class="card">
+                    <h3>智力型加点</h3>
+                    <p>强化法术技能与远程输出，依靠技能连招打出高额伤害。需要一定的走位与技能释放意识。</p>
+                    <div>
+                        <span class="tag">法术伤害</span>
+                        <span class="tag">远程</span>
+                        <span class="tag">技能流派</span>
+                    </div>
+                </div>
+                <div class="card">
+                    <h3>均衡型加点</h3>
+                    <p>各项属性平衡发展，适应多变的战斗环境。适合新手玩家熟悉游戏节奏，后期可再针对洗点。</p>
+                    <div>
+                        <span class="tag">稳定</span>
+                        <span class="tag">泛用性高</span>
+                        <span class="tag">新手推荐</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 加点原则 -->
+        <section class="section">
+            <h2 class="section-title">加点核心原则</h2>
+            <div class="tip-box">
+                <strong>💡 提示：</strong>加点没有绝对的最优解，了解角色定位与团队需求才是关键。建议在尝试不同方案后，找到最适合自己习惯的玩法。
+            </div>
+            <div class="card-grid" style="grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));">
+                <div class="card">
+                    <h3>明确角色定位</h3>
+                    <p>先确定你的角色是偏向输出、坦克还是辅助，再决定主要投入的属性。盲目模仿他人加点可能不适合你的队伍配置。</p>
+                </div>
+                <div class="card">
+                    <h3>注意属性收益</h3>
+                    <p>每一项属性在达到一定阈值后，收益可能会递减。合理分配资源，避免单一属性堆砌过高。</p>
+                </div>
+                <div class="card">
+                    <h3>预留调整空间</h3>
+                    <p>游戏版本更新可能影响属性价值，保留部分属性点或洗点道具，以便在环境变化时灵活应对。</p>
+                </div>
+                <div class="card">
+                    <h3>实战检验方案</h3>
+                    <p>在副本或竞技场中测试加点效果，观察伤害、生存和技能循环是否流畅，根据实战反馈微调。</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 技能搭配 -->
+        <section id="skills" class="section">
+            <h2 class="section-title">技能搭配建议</h2>
+            <p class="section-sub">技能加点与属性加点是相辅相成的，合理的技能组合能最大化发挥属性优势。</p>
+            <div class="table-wrapper">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>玩法流派</th>
+                            <th>核心技能</th>
+                            <th>辅助技能</th>
+                            <th>推荐场景</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>物理爆发流</td>
+                            <td>破甲斩、连击</td>
+                            <td>战吼、反击</td>
+                            <td>PVP竞技、单体首领战</td>
+                        </tr>
+                        <tr>
+                            <td>敏捷速攻流</td>
+                            <td>疾风刺、影袭</td>
+                            <td>闪避强化、连射</td>
+                            <td>快速清图、高机动战斗</td>
+                        </tr>
+                        <tr>
+                            <td>法术爆发流</td>
+                            <td>烈焰风暴、冰霜新星</td>
+                            <td>魔法护盾、瞬移</td>
+                            <td>群体怪、远程消耗</td>
+                        </tr>
+                        <tr>
+                            <td>团队辅助流</td>
+                            <td>治疗术、增益光环</td>
+                            <td>净化、复活</td>
+                            <td>团队副本、高难挑战</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- 装备选择 -->
+        <section id="equipment" class="section">
+            <h2 class="section-title">装备与属性协同</h2>
+            <p class="section-sub">装备的词缀和套装效果可以进一步放大加点的收益，以下是装备选择的几个关键维度。</p>
+            <div class="card-grid">
+                <div class="card">
+                    <h3>主属性叠加</h3>
+                    <p>优先选择带有与加点方向一致主属性的装备，例如力量型角色选择增加力量与体力的装备。</p>
+                </div>
+                <div class="card">
+                    <h3>附加属性互补</h3>
+                    <p>如果加点偏向防御，装备可以补充暴击或穿透；反之，输出型加点可以搭配少量生命回复。</p>
+                </div>
+                <div class="card">
+                    <h3>套装效果利用</h3>
+                    <p>收集套装激活额外属性加成，有时套装效果对加点的增益甚至超过单件属性。</p>
+                </div>
+                <div class="card">
+                    <h3>强化与镶嵌</h3>
+                    <p>通过强化、附魔和宝石镶嵌，定向补足短板属性，使角色整体更加均衡。</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 攻略列表 -->
+        <section id="guide" class="section">
+            <h2 class="section-title">玩家攻略与心得</h2>
+            <p class="section-sub">来自社区玩家的加点经验分享，帮助你少走弯路。</p>
+            <ul class="guide-list">
+                <li>
+                    <a href="#">新手向：1-50级快速加点思路与升级路线</a>
+                    <span class="guide-meta">浏览 2.1k · 点赞 56</span>
+                </li>
+                <li>
+                    <a href="#">PVP高胜率加点方案深度解析（附实战视频）</a>
+                    <span class="guide-meta">浏览 3.4k · 点赞 89</span>
+                </li>
+                <li>
+                    <a href="#">全流派加点对比：力量vs敏捷vs智力谁更强？</a>
+                    <span class="guide-meta">浏览 1.8k · 点赞 34</span>
+                </li>
+                <li>
+                    <a href="#">洗点之后如何重新规划属性？老玩家建议</a>
+                    <span class="guide-meta">浏览 976 · 点赞 21</span>
+                </li>
+                <li>
+                    <a href="#">版本更新后加点趋势分析与未来环境展望</a>
+                    <span class="guide-meta">浏览 1.2k · 点赞 18</span>
+                </li>
+            </ul>
+        </section>
+
+        <!-- FAQ -->
+        <section id="faq" class="section">
+            <h2 class="section-title">常见问题 FAQ</h2>
+            <div class="faq-item">
+                <h4>Q1: 加点后可以洗点吗？</h4>
+                <p>大多数情况下游戏会提供洗点功能，但可能受限于道具或次数。建议在洗点前备份方案，并确认当前版本洗点机制。</p>
+            </div>
+            <div class="faq-item">
+                <h4>Q2: 不同等级阶段需要调整加点吗？</h4>
+                <p>前期由于点数较少，建议集中投入核心属性；后期点数充裕时，可以适当补充副属性或根据装备需求调整。</p>
+            </div>
+            <div class="faq-item">
+                <h4>Q3: 平民玩家与氪金玩家的加点有区别吗？</h4>
+                <p>如果通过装备能获得大量属性加成，加点可以更偏向平衡；反之则建议集中加点以弥补装备差距。</p>
+            </div>
+            <div class="faq-item">
+                <h4>Q4: 如何判断一套加点是否适合自己？</h4>
+                <p>可以从输出效率、生存能力和操作手感三个维度评估。如果发现某个环节明显吃力，不妨适当调整属性分配。</p>
+            </div>
+        </section>
+
+        <!-- 注意事项 -->
+        <section class="section">
+            <h2 class="section-title">加点注意事项</h2>
+            <div class="card-grid">
+                <div class="card">
+                    <h3>避免盲目跟风</h3>
+                    <p>别人的方案是基于特定装备和队伍配置，直接照搬未必适合你。多思考方案背后的逻辑。</p>
+                </div>
+                <div class="card">
+                    <h3>关注版本动态</h3>
+                    <p>游戏平衡性调整会直接影响属性价值，定期关注官方公告和社区讨论。</p>
+                </div>
+                <div class="card">
+                    <h3>不要忽视生存</h3>
+                    <p>即使追求极限输出，也要保证一定的生命和防御，否则在高压环境下很难发挥作用。</p>
+                </div>
+                <div class="card">
+                    <h3>保留备用方案</h3>
+                    <p>针对不同玩法（PVE/PVP）准备多套加点思路，切换应对会更从容。</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <h4>taihao加点</h4>
+                    <p style="font-size: 0.9rem;">专注于泰豪游戏加点研究与角色养成，为玩家提供实用的属性分配与技能搭配参考。</p>
+                </div>
+                <div>
+                    <h4>快速导航</h4>
+                    <a href="#builds">加点方案</a>
+                    <a href="#skills">技能搭配</a>
+                    <a href="#equipment">装备选择</a>
+                    <a href="#faq">常见问题</a>
+                </div>
+                <div>
+                    <h4>相关推荐</h4>
+                    <a href="#">泰豪角色图鉴</a>
+                    <a href="#">副本攻略</a>
+                    <a href="#">装备掉落查询</a>
+                </div>
+                <div>
+                    <h4>免责声明</h4>
+                    <p style="font-size: 0.85rem;">本站内容为玩家经验分享，仅供参考。具体游戏机制以官方版本为准。</p>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>© 2025 taihao加点 专题站 · 用心服务每一位玩家</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
